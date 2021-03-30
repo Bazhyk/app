@@ -1,4 +1,4 @@
 FROM bazhyk/todoappjenkins:latest
 WORKDIR /app
-COPY package* yran.lock ./
+COPY package* yarn.lock ./
 CMD ["node", "/app/src/index.js"]
