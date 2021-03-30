@@ -4,6 +4,8 @@ services:
   app:
     image: node:12-alpine
     command: sh -c "yarn install && yarn run dev"
+    build: .
+    image: bazhyk/todoappjenkins
     ports:
       - 3000:3000
     working_dir: /app
