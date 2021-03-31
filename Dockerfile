@@ -1,4 +1,4 @@
-FROM bazhyk/todoappjenkins:latest
+FROM node:12-alpine
 WORKDIR /app
 COPY package* yarn.lock ./
 COPY src ./src
