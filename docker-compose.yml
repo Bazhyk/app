@@ -4,9 +4,7 @@ services:
   app:
     image: bazhyk/todoappjenkins:latest
     build: .
-    tags: 
-    -backup${BUILD_NUMBER}
-    -latest
+    image: bazhyk/todoappjenkins:latest, bazhyk/todoappjenkins:backup${BUILD_NUMBER}
     ports:
       - 3000:3000
     working_dir: /app
