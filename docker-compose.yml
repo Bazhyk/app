@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   app:
-    image: bazhyk/todoappjenkins:latest
+    image: bazhyk/todoappjenkins
     build: .
     ports:
       - 3000:3000
