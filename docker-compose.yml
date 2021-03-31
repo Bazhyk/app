@@ -4,8 +4,20 @@ services:
   app:
     image: bazhyk/todoappjenkins:latest
     build: .
+    ports:
+      - 3000:3000
+    working_dir: /app
+    volumes:
+      - ./:/app
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret
+      MYSQL_DB: todos
+app:
     image: bazhyk/todoappjenkins:latest
-    image: bazhyk/todoappjenkins:backup${BUILD_NUMBER}
+    build: .
+    image: bazhyk/todoappjenkins:bazkup${BUILD_NUMBER}
     ports:
       - 3000:3000
     working_dir: /app
