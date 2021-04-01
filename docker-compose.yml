@@ -14,6 +14,20 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: secret
       MYSQL_DB: todos
+  app2:
+    image: bazhyk/todoappjenkins:latest
+    build: .
+    image: bazhyk/todoappjenkins:backup${BUILD_NUMBER}
+    ports:
+      - 3000:3000
+    working_dir: /app
+    volumes:
+      - ./:/app
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret
+      MYSQL_DB: todos
   mysql:
     image: mysql:5.7
     volumes:
