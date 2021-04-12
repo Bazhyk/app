@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: .
+    destination: /home/ubuntu/app/
+hooks:
+  BeforeInstall:
+    - location: ./install.sh
+      timeout: 900
+  ApplicationStart:
+    - location: ./install0.sh
+      timeout: 900
